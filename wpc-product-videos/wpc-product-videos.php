@@ -3,24 +3,27 @@
 Plugin Name: WPC Product Videos for WooCommerce
 Plugin URI: https://wpclever.net/
 Description: WPC Product Videos helps you add many videos for a product and linked to the feature image or product gallery images.
-Version: 1.1.4
+Version: 1.1.5
 Author: WPClever
 Author URI: https://wpclever.net
 Text Domain: wpc-product-videos
 Domain Path: /languages/
 Requires Plugins: woocommerce
 Requires at least: 4.0
-Tested up to: 6.6
+Tested up to: 6.7
 WC requires at least: 3.0
-WC tested up to: 9.1
+WC tested up to: 9.4
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 defined( 'ABSPATH' ) || exit;
 
-! defined( 'WPCPV_VERSION' ) && define( 'WPCPV_VERSION', '1.1.4' );
+! defined( 'WPCPV_VERSION' ) && define( 'WPCPV_VERSION', '1.1.5' );
 ! defined( 'WPCPV_LITE' ) && define( 'WPCPV_LITE', __FILE__ );
 ! defined( 'WPCPV_FILE' ) && define( 'WPCPV_FILE', __FILE__ );
 ! defined( 'WPCPV_URI' ) && define( 'WPCPV_URI', plugin_dir_url( __FILE__ ) );
+! defined( 'WPCPV_DIR' ) && define( 'WPCPV_DIR', plugin_dir_path( __FILE__ ) );
 ! defined( 'WPCPV_REVIEWS' ) && define( 'WPCPV_REVIEWS', 'https://wordpress.org/support/plugin/wpc-product-videos/reviews/?filter=5' );
 ! defined( 'WPCPV_CHANGELOG' ) && define( 'WPCPV_CHANGELOG', 'https://wordpress.org/plugins/wpc-product-videos/#developers' );
 ! defined( 'WPCPV_DISCUSSION' ) && define( 'WPCPV_DISCUSSION', 'https://wordpress.org/support/plugin/wpc-product-videos' );
@@ -34,9 +37,6 @@ if ( ! function_exists( 'wpcpv_init' ) ) {
 	add_action( 'plugins_loaded', 'wpcpv_init', 11 );
 
 	function wpcpv_init() {
-		// load text-domain
-		load_plugin_textdomain( 'wpc-product-videos', false, basename( __DIR__ ) . '/languages/' );
-
 		if ( ! function_exists( 'WC' ) || ! version_compare( WC()->version, '3.0', '>=' ) ) {
 			add_action( 'admin_notices', 'wpcpv_notice_wc' );
 
@@ -56,6 +56,8 @@ if ( ! function_exists( 'wpcpv_init' ) ) {
 				}
 
 				function __construct() {
+					add_action( 'init', [ $this, 'init' ] );
+
 					// enqueue scripts
 					add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 
@@ -72,6 +74,11 @@ if ( ! function_exists( 'wpcpv_init' ) ) {
 
 					// show videos
 					add_filter( 'woocommerce_single_product_image_thumbnail_html', [ $this, 'thumbnail_html' ], 10, 2 );
+				}
+
+				function init() {
+					// load text-domain
+					load_plugin_textdomain( 'wpc-product-videos', false, basename( WPCPV_DIR ) . '/languages/' );
 				}
 
 				function enqueue_scripts() {
