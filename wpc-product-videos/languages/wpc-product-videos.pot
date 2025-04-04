@@ -1,4 +1,4 @@
-# Copyright (C) 2024 WPClever
+# Copyright (C) 2025 WPClever
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
@@ -9,28 +9,33 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-26T16:24:14+00:00\n"
+"POT-Creation-Date: 2025-03-23T16:53:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0\n"
+"X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: wpc-product-videos\n"
 
 #. Plugin Name of the plugin
+#: wpc-product-videos.php
 msgid "WPC Product Videos for WooCommerce"
 msgstr ""
 
 #. Plugin URI of the plugin
+#: wpc-product-videos.php
 msgid "https://wpclever.net/"
 msgstr ""
 
 #. Description of the plugin
+#: wpc-product-videos.php
 msgid "WPC Product Videos helps you add many videos for a product and linked to the feature image or product gallery images."
 msgstr ""
 
 #. Author of the plugin
+#: wpc-product-videos.php
 msgid "WPClever"
 msgstr ""
 
 #. Author URI of the plugin
+#: wpc-product-videos.php
 msgid "https://wpclever.net"
 msgstr ""
 
