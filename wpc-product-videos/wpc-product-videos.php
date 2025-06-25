@@ -3,23 +3,23 @@
 Plugin Name: WPC Product Videos for WooCommerce
 Plugin URI: https://wpclever.net/
 Description: WPC Product Videos helps you add many videos for a product and linked to the feature image or product gallery images.
-Version: 1.1.5
+Version: 1.1.6
 Author: WPClever
 Author URI: https://wpclever.net
 Text Domain: wpc-product-videos
 Domain Path: /languages/
 Requires Plugins: woocommerce
 Requires at least: 4.0
-Tested up to: 6.7
+Tested up to: 6.8
 WC requires at least: 3.0
-WC tested up to: 9.7
+WC tested up to: 9.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 defined( 'ABSPATH' ) || exit;
 
-! defined( 'WPCPV_VERSION' ) && define( 'WPCPV_VERSION', '1.1.5' );
+! defined( 'WPCPV_VERSION' ) && define( 'WPCPV_VERSION', '1.1.6' );
 ! defined( 'WPCPV_LITE' ) && define( 'WPCPV_LITE', __FILE__ );
 ! defined( 'WPCPV_FILE' ) && define( 'WPCPV_FILE', __FILE__ );
 ! defined( 'WPCPV_URI' ) && define( 'WPCPV_URI', plugin_dir_url( __FILE__ ) );
@@ -105,22 +105,35 @@ if ( ! function_exists( 'wpcpv_init' ) ) {
 					$active_tab = sanitize_key( $_GET['tab'] ?? 'how' );
 					?>
                     <div class="wpclever_settings_page wrap">
-                        <h1 class="wpclever_settings_page_title"><?php echo esc_html__( 'WPC Product Videos', 'wpc-product-videos' ) . ' ' . esc_html( WPCPV_VERSION ); ?></h1>
-                        <div class="wpclever_settings_page_desc about-text">
-                            <p>
-								<?php printf( /* translators: stars */ esc_html__( 'Thank you for using our plugin! If you are satisfied, please reward it a full five-star %s rating.', 'wpc-product-videos' ), '<span style="color:#ffb900">&#9733;&#9733;&#9733;&#9733;&#9733;</span>' ); ?>
-                                <br/>
-                                <a href="<?php echo esc_url( WPCPV_REVIEWS ); ?>" target="_blank"><?php esc_html_e( 'Reviews', 'wpc-product-videos' ); ?></a> |
-                                <a href="<?php echo esc_url( WPCPV_CHANGELOG ); ?>" target="_blank"><?php esc_html_e( 'Changelog', 'wpc-product-videos' ); ?></a> |
-                                <a href="<?php echo esc_url( WPCPV_DISCUSSION ); ?>" target="_blank"><?php esc_html_e( 'Discussion', 'wpc-product-videos' ); ?></a>
-                            </p>
+                        <div class="wpclever_settings_page_header">
+                            <a class="wpclever_settings_page_header_logo" href="https://wpclever.net/"
+                               target="_blank" title="Visit wpclever.net"></a>
+                            <div class="wpclever_settings_page_header_text">
+                                <div class="wpclever_settings_page_title"><?php echo esc_html__( 'WPC Product Videos', 'wpc-product-videos' ) . ' ' . esc_html( WPCPV_VERSION ); ?></div>
+                                <div class="wpclever_settings_page_desc about-text">
+                                    <p>
+										<?php printf( /* translators: stars */ esc_html__( 'Thank you for using our plugin! If you are satisfied, please reward it a full five-star %s rating.', 'wpc-product-videos' ), '<span style="color:#ffb900">&#9733;&#9733;&#9733;&#9733;&#9733;</span>' ); ?>
+                                        <br/>
+                                        <a href="<?php echo esc_url( WPCPV_REVIEWS ); ?>"
+                                           target="_blank"><?php esc_html_e( 'Reviews', 'wpc-product-videos' ); ?></a> |
+                                        <a href="<?php echo esc_url( WPCPV_CHANGELOG ); ?>"
+                                           target="_blank"><?php esc_html_e( 'Changelog', 'wpc-product-videos' ); ?></a>
+                                        |
+                                        <a href="<?php echo esc_url( WPCPV_DISCUSSION ); ?>"
+                                           target="_blank"><?php esc_html_e( 'Discussion', 'wpc-product-videos' ); ?></a>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
+                        <h2></h2>
                         <div class="wpclever_settings_page_nav">
                             <h2 class="nav-tab-wrapper">
-                                <a href="<?php echo esc_url( admin_url( 'admin.php?page=wpclever-wpcpv&tab=how' ) ); ?>" class="<?php echo esc_attr( $active_tab === 'how' ? 'nav-tab nav-tab-active' : 'nav-tab' ); ?>">
+                                <a href="<?php echo esc_url( admin_url( 'admin.php?page=wpclever-wpcpv&tab=how' ) ); ?>"
+                                   class="<?php echo esc_attr( $active_tab === 'how' ? 'nav-tab nav-tab-active' : 'nav-tab' ); ?>">
 									<?php esc_html_e( 'How to use?', 'wpc-product-videos' ); ?>
                                 </a>
-                                <a href="<?php echo esc_url( admin_url( 'admin.php?page=wpclever-kit' ) ); ?>" class="nav-tab">
+                                <a href="<?php echo esc_url( admin_url( 'admin.php?page=wpclever-kit' ) ); ?>"
+                                   class="nav-tab">
 									<?php esc_html_e( 'Essential Kit', 'wpc-product-videos' ); ?>
                                 </a>
                             </h2>
@@ -145,13 +158,17 @@ if ( ! function_exists( 'wpcpv_init' ) ) {
                             </div>
                             <div class="wpclever_settings_page_suggestion_content">
                                 <div>
-                                    To display custom engaging real-time messages on any wished positions, please install
-                                    <a href="https://wordpress.org/plugins/wpc-smart-messages/" target="_blank">WPC Smart Messages</a> plugin. It's free!
+                                    To display custom engaging real-time messages on any wished positions, please
+                                    install
+                                    <a href="https://wordpress.org/plugins/wpc-smart-messages/" target="_blank">WPC
+                                        Smart Messages</a> plugin. It's free!
                                 </div>
                                 <div>
                                     Wanna save your precious time working on variations? Try our brand-new free plugin
-                                    <a href="https://wordpress.org/plugins/wpc-variation-bulk-editor/" target="_blank">WPC Variation Bulk Editor</a> and
-                                    <a href="https://wordpress.org/plugins/wpc-variation-duplicator/" target="_blank">WPC Variation Duplicator</a>.
+                                    <a href="https://wordpress.org/plugins/wpc-variation-bulk-editor/" target="_blank">WPC
+                                        Variation Bulk Editor</a> and
+                                    <a href="https://wordpress.org/plugins/wpc-variation-duplicator/" target="_blank">WPC
+                                        Variation Duplicator</a>.
                                 </div>
                             </div>
                         </div>
