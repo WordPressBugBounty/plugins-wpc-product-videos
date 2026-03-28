@@ -3,8 +3,8 @@ Contributors: wpclever
 Donate link: https://wpclever.net
 Tags: woocommerce, wpc, video, youtube, vimeo
 Tested up to: 6.9
-Version: 1.1.7
-Stable tag: 1.1.7
+Version: 1.1.8
+Stable tag: 1.1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,9 @@ Please try other plugins from us:
 4. Now you can add video for each product image
 
 == Changelog ==
+
+= 1.1.8 =
+* Updated: Compatible with WP 6.9 & Woo 10.6
 
 = 1.1.7 =
 * Updated: Optimized the code
