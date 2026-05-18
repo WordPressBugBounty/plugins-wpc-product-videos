@@ -3,8 +3,8 @@ Contributors: wpclever
 Donate link: https://wpclever.net
 Tags: woocommerce, wpc, video, youtube, vimeo
 Tested up to: 6.9
-Version: 1.1.8
-Stable tag: 1.1.8
+Version: 1.2.0
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,10 +13,6 @@ WPC Product Videos helps you add many videos for a product and linked to the fea
 == Description ==
 
 **WPC Product Videos for WooCommerce** is a versatile plugin designed to enhance your online store by allowing you to add multiple videos to a product, seamlessly linked to the feature image or product gallery images. This powerful tool supports integration with popular platforms like YouTube and Vimeo, making it easy to showcase your products in an engaging and dynamic way. With compatibility for WPML, it offers effortless translation options, ensuring accessibility for a global audience. Featuring a user-friendly interface, WPC Product Videos is ideal for users of all skill levels, while its customization options let you tailor the video presentation to suit your store’s unique style. Elevate your WooCommerce product pages with this simple yet effective solution—check out the live demo to see it in action!
-
-= Live demo =
-
-Visit our [live demo](https://demo.wpclever.net/wpcpv/ "live demo") here to see how this plugin works.
 
 = Features =
 
@@ -42,6 +38,10 @@ Please try other plugins from us:
 4. Now you can add video for each product image
 
 == Changelog ==
+
+= 1.2.0 =
+* Updated: Optimized the code
+* Fixed: Minor CSS/JS issues in the backend
 
 = 1.1.8 =
 * Updated: Compatible with WP 6.9 & Woo 10.6
