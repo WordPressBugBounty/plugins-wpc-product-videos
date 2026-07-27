@@ -3,7 +3,7 @@
 Plugin Name: WPC Product Videos for WooCommerce
 Plugin URI: https://wpclever.net/
 Description: WPC Product Videos helps you add many videos for a product and linked to the feature image or product gallery images.
-Version: 1.2.1
+Version: 1.2.2
 Author: WPClever
 Author URI: https://wpclever.net
 Text Domain: wpc-product-videos
@@ -12,14 +12,14 @@ Requires Plugins: woocommerce
 Requires at least: 5.9
 Tested up to: 7.0
 WC requires at least: 3.0
-WC tested up to: 10.8
+WC tested up to: 10.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 defined( 'ABSPATH' ) || exit;
 
-! defined( 'WPCPV_VERSION' ) && define( 'WPCPV_VERSION', '1.2.1' );
+! defined( 'WPCPV_VERSION' ) && define( 'WPCPV_VERSION', '1.2.2' );
 ! defined( 'WPCPV_LITE' ) && define( 'WPCPV_LITE', __FILE__ );
 ! defined( 'WPCPV_FILE' ) && define( 'WPCPV_FILE', __FILE__ );
 ! defined( 'WPCPV_URI' ) && define( 'WPCPV_URI', plugin_dir_url( __FILE__ ) );
@@ -109,7 +109,7 @@ if ( ! function_exists( 'wpcpv_init' ) ) {
 
                 function admin_menu_content() {
                     // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-                    $active_tab = sanitize_key( $_GET['tab'] ?? 'how' );
+                    $active_tab = sanitize_key( wp_unslash( $_GET['tab'] ?? 'how' ) );
                     ?>
                     <div class="wpclever_settings_page wrap">
                         <div class="wpclever_settings_page_header">
